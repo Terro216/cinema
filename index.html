@@ -4,6 +4,7 @@
     <style>
         body {
             background-color:black;
+            color:white;
         }
         .movie {
             border: 1px solid green;
@@ -16,36 +17,39 @@
             margin: 0 auto;
         }
     </style>
-    <script>
-        search() {
-            let name =  document.getElementById('inp').value;
-            let film = document.getElementsByClassName('search');
-            film.data-title = name;
-        }
-    </script>
 </head>
 <body>
+<script>
+        /*var filmname = window.location.search.replace(/[?]/,'');
+        filmname = decodeURIComponent(filmname.replace(/\+/g,  " "));
+        let holder = document.getElementById('filmholder');
+        let divi = document.createElement('div');
+        divi.innerHTML = `
+        <div id="yohoho" class="search" data-title="${filmname}"></div>
+        <script src='//yohoho.cc/yo.js'><\/script>
+            `;
+        document.body.append(divi);*/
+</script>
 
-<div class="movie">
-<h1>Красотка:</h1><br><p></p>
-<div id="yohoho" data-title="Карнавал (1981)"></div>
-<script src="//yohoho.cc/yo.js"></script>
+ <div class="movie">
+    <h1>Карнавал:</h1><br><p></p>
+    <div id="yohoho" data-title="Карнавал (1981)" data-button_size="1"></div>
+    <script src="//yohoho.cc/yo.js"></script>
 </div>
 
-<div class="movie"> 
-<h1>Карнавал:</h1>
-<div id="yohoho" data-title="Красотка (1990)"></div>
-</div>
+<!--
+<div id="search-bar">
+<h1>Поиск:</h1>
+<input type="text" id="inp" placeholder="Название (год)">
+<input type="button" data-ahoy="yohoho" id="button" value='Искать!'>
+</div>-->
 
-<div class="movie">
-<h1>Телохранитель:</h1>
-<div id="yohoho" data-title="Телохранитель (1992)"></div>
-<script src="//yohoho.cc/yo.js"></script>
-</div>
-
-Поиск: <input type="text" id="inp" placeholder="Название (год)">
-<button onClick="search()">Найти</button>
-<div id="yohoho" class="search" data-title=""></div>
-<script src="//yohoho.cc/yo.js"></script>
 </body>
+<script>
+document.getElementById('button').onclick = function() {
+        let name =  document.getElementById('inp').value;
+        name = encodeURIComponent(name);
+        window.location.replace(location.pathname + '?' +name);
+};
+</script>
 </html>
