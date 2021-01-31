@@ -1,19 +1,25 @@
 <html>
 <head>
     <title>Cinema</title>
+    <style>
+        body {
+            background-color:black;
+        }
+        .movie {
+            border: 1px solid green;
+            border-radius:15px;
+            padding:10px;
+            margin-top:30px;
+        }
+    </style>
+    <script>
+        search() {
+            let name =  document.getElementById('inp').value;
+            let film = document.getElementsByClassName('search');
+            film.data-title = name;
+        }
+    </script>
 </head>
-<style>
-    body {
-        background-color:black;
-    }
-    .movie {
-        border: 1px solid green;
-        border-radius:15px;
-        padding:10px;
-        margin-top:30px;
-        width:100vw;
-    }
-</style>
 <body>
 
 <div class="movie"><h1>Красотка:</h1>
@@ -24,7 +30,6 @@
 <div class="movie"> 
 <h1>Карнавал:</h1>
 <div id="yohoho" data-title="Карнавал (1981)" data-button_size="3"></div>
-<script src="//yohoho.cc/yo.js"></script>
 </div>
 
 <div class="movie">
@@ -33,5 +38,9 @@
 <script src="//yohoho.cc/yo.js"></script>
 </div>
 
+Поиск: <input type="text" id="inp" placeholder="Название (год)">
+<button onClick="search()">Найти</button>
+<div id="yohoho" class="search" data-title=""></div>
+<script src="//yohoho.cc/yo.js"></script>
 </body>
 </html>
