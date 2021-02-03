@@ -5,6 +5,7 @@
         body {
             background-color:black;
             color:white;
+            margin:0 auto;
         }
         .movie {
             border: 1px solid green;
@@ -16,9 +17,16 @@
             color:white;
             margin: 0 auto;
         }
+        #search-bar {
+            font-size: 2em;
+        }
+        input {
+            font-size:120%;
+        }
     </style>
 </head>
 <body>
+    
 <script>
         var filmname = window.location.search.replace(/[?]/,'');
         filmname = decodeURIComponent(filmname.replace(/\+/g,  " "));
@@ -26,18 +34,15 @@
         let divi = document.createElement('div');
         //filmname="красотка";
         divi.innerHTML = `
+        <div class="movie">
+        <h1>${filmname}:</h1><br><p></p>
         <div id="yohoho" class="search" data-title="${filmname}"></div>
-        <script src='//yohoho.cc/yo.js'><\/script>
-            `;
+        </div>`;
         document.body.append(divi);
 </script>
-
- <div class="movie">
-    <h1>10 негритят:</h1><br><p></p>
-    <div id="yohoho" data-title="10 негритят" data-button_size="1"></div>
-    <script src="//yohoho.cc/yo.js"></script>
 </div>
-
+<script src='//yohoho.cc/yo.js'></script>
+<br><br>
 <div id="search-bar">
 <h1>Поиск:</h1>
 <input type="text" id="inp" placeholder="Название (год)">
