@@ -24,7 +24,7 @@
         filmname = decodeURIComponent(filmname.replace(/\+/g,  " "));
         let holder = document.getElementById('filmholder');
         let divi = document.createElement('div');
-        filmname="красотка";
+        //filmname="красотка";
         divi.innerHTML = `
         <div id="yohoho" class="search" data-title="${filmname}"></div>
         <script src='//yohoho.cc/yo.js'><\/script>
@@ -38,12 +38,11 @@
     <script src="//yohoho.cc/yo.js"></script>
 </div>
 
-<!--
 <div id="search-bar">
 <h1>Поиск:</h1>
 <input type="text" id="inp" placeholder="Название (год)">
 <input type="button" data-ahoy="yohoho" id="button" value='Искать!'>
-</div>-->
+</div>
 
 </body>
 <script>
